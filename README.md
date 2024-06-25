@@ -1,6 +1,6 @@
 <h1>Essential Setup For Program</h1>:
 <ol>
-  <li> Install python from : <a>https://www.python.org/downloads/</a> while installing must add it to the PATH you will get the option of adding it to path while installing </li>
+  <li> Install python from : <a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a> while installing must add it to the PATH you will get the option of adding it to path while installing </li>
   <li> Now clone this repo  using command "git clone https://github.com/arsidd78/BusinessInquiryBot.git " </li>
   <li>Than in your python environment run this command: "pip install -r requirements.txt" to install all the required packages</li>
   <li>Now Follow the documentation below </li>
