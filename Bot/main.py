@@ -2,7 +2,6 @@ from playwright.async_api import async_playwright
 import asyncio
 import logging
 import pandas as pd
-import time
 
 class Bot:
     def __init__(self, business_name, headless: bool):
@@ -36,7 +35,7 @@ class Bot:
             
             # Click inquiry button and wait for the bot to take action again.
             try:
-                await page.wait_for_selector('xpath=//td[@class="dxgvHeader"]', timeout=50000)
+                await page.wait_for_selector('xpath=//td[@class="dxgvHeader"]', timeout=150000)
                 logging.info('Inquiry Page found!')
                 total_pages = await page.locator('//td[@class="dxpPageNumber"][last()]').text_content()
 
@@ -66,7 +65,7 @@ class Bot:
                             try:
                                 await page.wait_for_selector(
                                     f'//input[@name="ctl00$MainContent$View_ucSearch_By_BN$popupBL_Detail$callbackPanel_BL_Detail$btnDetailOKExit"]',
-                                    timeout=50000,
+                                    timeout=150000,
                                     )
 
                                 data = {
@@ -102,7 +101,7 @@ class Bot:
                 
                 # Click next page button
                 try:
-                    await page.wait_for_selector('//td[@class="dxpButton"]', timeout=5000)
+                    await page.wait_for_selector('//td[@class="dxpButton"]', timeout=50000)
                     await page.locator('//td[@class="dxpButton"]').click()
                     logging.info('-------------------------> Moved to Next Page<-----------------------------')
                     await page.wait_for_selector('xpath=//td[@class="dxgvHeader"]', timeout=50000)
@@ -114,7 +113,7 @@ class Bot:
 
     def data_storing(self):
         df = pd.DataFrame(self.data_list)
-        df.to_csv(f'{self.business_name}_data.csv', index=False)
+        df.to_csv(f'{self.business_name}_data.csv', index=False,mode='a')
         logging.info('Data saved to data.csv')
 
 async def main():
