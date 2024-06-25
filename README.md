@@ -1,3 +1,11 @@
+<h1>Essential Setup For Program</h1>:
+<ol>
+  <li> Install python from : <a>https://www.python.org/downloads/</a> while installing must add it to the PATH you will get the option of adding it to path while installing </li>
+  <li> Now clone this repo  using command "git clone https://github.com/arsidd78/BusinessInquiryBot.git " </li>
+  <li>Than in your python environment run this command: "pip install -r requirements.txt" to install all the required packages</li>
+  <li>Now Follow the documentation below </li>
+</ol>
+<hr>
 <h3>This bot will go to the site :</h3> <a href=https://ner.economy.ae/Search_By_BN.aspx>https://ner.economy.ae/Search_By_BN.aspx</a>
 <h3>At starting this bot will ask about the business name, this business name is relevant because the data that will be stored in a csv file will have this name plus the logs will also be named after this input</h3>
 <p> After the site is loaded you will see an arabic version you can click on english and retype the business name in input field of the site than you can solve human authentication
